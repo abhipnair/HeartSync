@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Montserrat:wght@700&family=Bebas+Neue&family=Poppins:wght@700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    color: #fff;
+    overflow: hidden;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.heart-bg {
+    position: absolute;
+    bottom: -50px;
+    color: #ff6b81;
+    animation: float 5s infinite ease-in-out;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(10deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    gap: 0; /* Remove extra space between elements */
+}
+
+
+h1 {
+    font-family: "Fleur De Leah", cursive;
+    font-weight: 500; 
+    font-style: normal;
+    font-size: 4.5rem; 
+    margin-bottom: 1px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4); 
+}
+
+h2 {
+    font-family: "Karla", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.heart-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 30px; /* Adds space below the heart */
+    margin-top: 30px;
+}
+
+
+.heart-shape {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: #ff6b81;
+    clip-path: polygon(50% 15%, 70% 0, 100% 35%, 100% 70%, 50% 100%, 0 70%, 0 35%, 30% 0);
+    overflow: hidden;
+}
+
+.liquid {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0%; /* Initially empty */
+    background: #ff4757;
+    transition: height 1s ease-in-out;
+}
+
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #ff6b81;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #ff4757;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.flames-result {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ff6b81;
+}
+
+
+
+.love-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 192, 203, 0.98);
+    border-radius: 20px;
+    padding: 30px; /* Increased padding */
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 0, 100, 0.6);
+    z-index: 1000;
+    animation: fadeIn 0.5s ease-in-out;
+    width: 550px; /* Increased width */
+    max-width: 90%;
+}
+
+.dialog-content {
+    font-family: 'Arial', sans-serif;
+    color: #5a2d82;
+    font-size: 1.4em; /* Increased font size */
+}
+
+.dialog-content h2 {
+    color: #ff4081;
+    font-size: 1.8em; /* Larger title */
+}
+
+.dialog-content p {
+    margin: 15px 0; /* More spacing between paragraphs */
+    font-size: 1.2em;
+}
+
+.dialog-content button {
+    background: #ff4081;
+    color: white;
+    border: none;
+    padding: 12px 20px; /* Larger button */
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em; /* Larger text */
+    margin-top: 10px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.dialog-content button:hover {
+    background: #e91e63;
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, -55%) scale(0.9); }
+    to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.8);
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+footer a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 3px;
+    background: #ff66b2; /* Romantic pink underline */
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+footer a:hover {
+    color: #ff66b2; /* Changes text color on hover */
+}
+
+footer a:hover::after {
+    transform: scaleX(1); /* Expands the underline smoothly */
+}
+
+
+
